@@ -27,6 +27,7 @@
     </li>
     <li><a href="#technical-details">Technikai részletek</a></li>
     <li><a href="#known-issues">Ismert problémák</a></li>
+    <li><a href="#versions">Verziók</a></li>
   </ol>
 </details>
 
@@ -158,6 +159,48 @@ A script a begyűjtött posztokat JSON formátumban menti:
    - A script használata sértheti a Facebook felhasználási feltételeit
    - IP cím blokkolás lehetséges
    - Fiók korlátozás előfordulhat
+
+<h2 id="versions">Verziók</h2>
+
+### Parancssoros verzió (app.py)
+Az alap verzió parancssoros felülettel rendelkezik. A beállításokat közvetlenül a kódban lehet módosítani:
+- Facebook oldal neve
+- Letöltendő posztok száma
+- Headless mód be/kikapcsolása
+
+### Grafikus verzió (app-v2.py)
+Az új verzió modern grafikus felülettel rendelkezik, ami jelentősen megkönnyíti a használatot.
+
+#### Főbb funkciók:
+- **Felhasználóbarát grafikus felület:**
+  - Könnyen használható beviteli mezők
+  - Facebook oldal neve és posztok száma beállítható
+  - Headless mód kapcsoló
+  - Start/Stop gombok
+  - Részletes folyamat kijelző
+
+- **Fejlesztett működés:**
+  - A scraping folyamat külön szálban fut, nem fagyasztja le a felületet
+  - Bármikor megállítható a "Megállítás" gombbal
+  - Automatikusan észleli a sikeres bejelentkezést
+  - Részletes hibaüzenetek és folyamat információk
+  - A felület letiltódik scraping közben
+
+#### Használat:
+1. Írd be a Facebook oldal nevét (pl. "telexhu")
+2. Állítsd be hány posztot szeretnél letölteni (1-100)
+3. Válaszd ki, hogy látható legyen-e a böngésző (headless mód)
+4. Kattints az "Indítás" gombra
+5. Ha szükséges, jelentkezz be manuálisan
+6. A program automatikusan lementi a posztokat a `facebook_posts.json` fájlba
+
+#### Továbbfejlesztési lehetőségek:
+- Több Facebook oldal párhuzamos scrapelése
+- Képek és linkek mentése
+- Posztok szűrése dátum szerint
+- Exportálás különböző formátumokban (CSV, Excel)
+- Proxy beállítások
+- Automatikus időzítés
 
 <hr>
 
